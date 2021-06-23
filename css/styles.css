@@ -1,0 +1,258 @@
+:root {
+    --darkBlue: #042b50;
+    --white: #ffffff;
+    --blue: #2bafd7;
+    --blueHover: #2c778f;
+    --greenHover: #065006;
+    --redHover: #800303;
+    --grey: #e1e1e1;
+    --greyHover: #979797;
+}
+
+/*TAGS*/
+html {
+    font-size: 65.2%;
+    box-sizing: border-box;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    margin: 0;
+}
+
+/*HEADER*/
+.header {
+    background-color: var(--darkBlue);
+    padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+    .header {
+        width: 100%;
+        margin: 0;
+        height: 10vh;
+    }
+}
+
+.header h1 {
+    text-align: center;
+    line-height: 1.7;
+    margin: 0;
+    color: var(--white);
+}
+
+.header span {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header span {
+        display: inline-block;
+    }
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container{
+        width: 100%;
+        max-width: 100rem;
+    }
+}
+
+/*MAIN CONTENT*/
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "refresh refresh"
+        "main main"
+        "main main"
+        "accept decline"
+        "previous next"
+    ;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .grid-container{
+        grid-template-columns: 5% auto auto 5%;
+        grid-template-areas:
+            ". refresh refresh ."
+            "previous main main next"
+            "previous main main next"
+            ". accept decline ."
+        ;
+        height: 90vh;
+    }
+}
+
+.refreshButtonContainer{
+    margin-top: 1rem;
+    grid-area: refresh;
+}
+
+.content{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acceptButton{
+    grid-area: accept;
+}
+
+.declineButton{
+    grid-area: decline;
+}
+
+.chevronLeft{
+    grid-area: previous;
+}
+
+.chevronRight{
+    grid-area: next;
+}
+
+.chevronContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: background-color .3s ease;
+}
+
+.chevronContainer:hover{
+    cursor: pointer;
+    background-color: var(--greyHover);
+}
+
+.imageContainer{
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    justify-content: center;
+}
+
+@media(min-width: 768px){
+    .imageContainer{
+        width: 35rem;
+        height: 35rem;
+    }
+}
+
+.image{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.userDataContainer{
+    width: 100%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px){
+    .userDataContainer{
+        max-width: 60rem;
+        margin: 1rem auto 0 auto;
+    }
+}
+
+.userDataContainer p {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 768px){
+    .userDataContainer p {
+        font-size: 1.8rem;
+    }
+}
+
+/*NO REQUESTS CONTENT*/
+.noRequestContentContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20rem;
+}
+
+.noRequestContentContainer p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px){
+    .noRequestContentContainer{
+        margin-top: 0;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+}
+
+/*BUTTONS*/
+.btn {
+    padding: 1rem 3rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    color: var(--white);
+    transition: background-color .3s ease;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-primary{
+    background-color: var(--blue);
+}
+
+.btn-primary:hover{
+    background-color: var(--blueHover);
+}
+
+.btn-accept{
+    background-color: green;
+}
+
+.btn-accept:hover{
+    background-color: var(--greenHover);
+}
+
+.btn-reject{
+    background-color: red;
+}
+
+.btn-reject:hover{
+    background-color: var(--redHover);
+}
+
+/*ICONS*/
+.icon{
+    font-size: 2rem;
+}
+
+/*UTILITIES*/
+.none{
+    display: none;
+}
