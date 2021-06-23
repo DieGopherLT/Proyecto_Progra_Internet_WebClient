@@ -1,4 +1,4 @@
-# Programación para internet - Proyecto/Cliente Nativo Android
+# Programación para internet - Proyecto/Cliente Web
 
 - Alumno: Diego López Torres 
 - Código: 215672951
