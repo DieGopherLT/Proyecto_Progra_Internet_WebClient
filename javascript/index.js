@@ -33,6 +33,7 @@ let currentSize = 0;
 
 //EVENTS
 document.addEventListener('DOMContentLoaded', getPendingProgressRequests);
+
 refreshButton.addEventListener('click', getPendingProgressRequests);
 noRequestsRefreshButton.addEventListener('click', getPendingProgressRequests);
 leftChevron.addEventListener('click', previousRequest);
@@ -111,25 +112,19 @@ function setData(data) {
 }
 
 function previousRequest(){
-    if(index === 0){
+    if(index === 0)
         index = data.length - 1;
-        setData(data[index]);
-    }
-    else{
+    else
         --index;
-        setData(data[index]);
-    }
+    setData(data[index]);
 }
 
 function nextRequest(){
-    if(index === data.length - 1){
+    if(index === data.length - 1)
         index = 0;
-        setData(data[index]);
-    }
-    else {
+    else 
         ++index;
-        setData(data[index]);
-    }
+    setData(data[index]);
 }
 
 function hideButtons(){
